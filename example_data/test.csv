@@ -1,0 +1,10 @@
+timestamp,flavor,color,foobar
+10,strange,red,9
+20,up,blue,8
+30,charm,,7
+40,strange,red,6
+50,up,blue,5
+60,charm,green,4
+70,strange,red,3
+80,up,blue,2
+90,charm,green,1
