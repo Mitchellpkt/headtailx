@@ -39,7 +39,7 @@ class HeadTail:
         if not self.file_path.exists():
             raise FileNotFoundError(f"File not found: {self.file_path}")
 
-        if self.num_lines <= 0:
+        if self.num_lines < 0:
             raise ValueError("Number of lines must be greater than 0.")
 
         if self.num_bytes is not None and self.num_bytes <= 0:
@@ -57,6 +57,8 @@ class HeadTail:
             print(f"==> {self.file_path} <==")
 
         df = self._read_dataframe()
+        if self.num_lines == 0:
+            return ', '.join(df.columns)
         return df.head(self.num_lines).to_string(index=False)
 
     def tail(self) -> str:
